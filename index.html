@@ -588,12 +588,14 @@ footer a:hover{color:#fff}
       })
       .catch(function(){
         // Fallback: envia o resumo pelo WhatsApp
-        var t = 'Ola! Quero vender meu carro:%0A' +
-          ['marca','modelo','versao','ano','km','cambio','combustivel','cor','valor','nome','telefone']
-            .map(function(n){ var v=fd.get(n); return v ? '• '+n+': '+encodeURIComponent(v) : ''; })
-            .filter(Boolean).join('%0A');
+        var rotulos = {marca:'Marca',modelo:'Modelo',versao:'Versão',ano:'Ano',km:'Km',cambio:'Câmbio',combustivel:'Combustível',cor:'Cor',placa:'Placa',valor:'Valor pretendido',obs:'Observações',nome:'Nome',telefone:'Telefone',email:'E-mail',cidade:'Cidade/Bairro'};
+        var t = 'Olá! Quero vender meu carro:\n' +
+          Object.keys(rotulos)
+            .map(function(n){ var v=fd.get(n); return v && String(v).trim() ? '• '+rotulos[n]+': '+String(v).trim() : ''; })
+            .filter(Boolean).join('\n');
         msg.className='msg err';
-        msg.innerHTML='Não conseguimos enviar agora. <a style="text-decoration:underline" target="_blank" href="https://api.whatsapp.com/send?phone=552124334593&amp;text=Ola">Clique aqui para enviar pelo WhatsApp</a>.';
+        msg.innerHTML='Não conseguimos enviar agora. <a style="text-decoration:underline" target="_blank" rel="noopener">Clique aqui para enviar pelo WhatsApp</a>.';
+        msg.querySelector('a').href = 'https://api.whatsapp.com/send?phone=552124334593&text=' + encodeURIComponent(t);
         next.disabled=false; next.textContent='Tentar novamente';
       });
   }
