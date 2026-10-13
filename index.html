@@ -258,7 +258,8 @@ footer a:hover{color:#fff}
 <header class="main">
   <div class="wrap">
     <a href="https://www.umamarscar.com.br/" class="logo" aria-label="Megas Car – página inicial">
-      <!-- Coloque o logo oficial em img/logo.png. Enquanto isso usa img/logo-print.png -->
+      <!-- PENDENTE: o logo ainda não está no repositório. Coloque o logo oficial em img/logo.png
+           (ou img/logo-print.png). Enquanto não existir, a página mostra o nome "MEGASCAR" em texto. -->
       <img src="img/logo.png" alt="Megas Car"
            onerror="if(!this.dataset.f){this.dataset.f=1;this.src='img/logo-print.png'}else{this.outerHTML='<span class=&quot;fallback&quot;>M<span>EGASCAR</span></span>'}">
     </a>
@@ -356,6 +357,8 @@ footer a:hover{color:#fff}
     </div>
 
     <div class="form-layout">
+      <!-- PENDENTE: enviar.php ainda não está no repositório. Sem ele o envio falha e a página
+           oferece o envio dos dados pelo WhatsApp (já preenchido). -->
       <form id="form" action="enviar.php" method="post" enctype="multipart/form-data" novalidate>
         <ol class="progress">
           <li class="on"><i>1</i><span>Veículo</span></li>
@@ -573,6 +576,7 @@ footer a:hover{color:#fff}
   drop.addEventListener('drop', function(e){ add(e.dataTransfer.files); });
 
   // Envio (enviar.php na Hostinger)
+  // PENDENTE: enviar.php ainda não existe; enquanto isso cai no fallback do WhatsApp abaixo.
   function send(){
     var fd = new FormData(form);
     fd.delete('fotos[]');
