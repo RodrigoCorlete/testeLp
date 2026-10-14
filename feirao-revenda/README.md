@@ -53,7 +53,7 @@ Abra o `index.html` no navegador com um duplo clique. Opcionalmente, use a exten
 
 ## Personalização
 Tudo fica no `<script>` no fim do `index.html`, no bloco **CONFIGURAÇÃO**:
-- **WhatsApp, endereço, horário e Instagram:** as constantes `WHATSAPP` (número), `WHATSAPP_LINK` (link de mensagem do WhatsApp Business, reserva caso `WHATSAPP` fique vazio), `ENDERECO`, `HORARIO` e `INSTAGRAM`. Todos os botões e o rodapé usam esses valores.
+- **WhatsApp, endereço, horário e Instagram:** as constantes `WHATSAPP`, `ENDERECO`, `HORARIO` e `INSTAGRAM`. Todos os botões e o rodapé usam esses valores.
 - **Estoque:** o array `carros` (modelo, ano, combustível, câmbio, preço e foto). Os cards são gerados a partir dele.
 - **Entregas:** o array `entregas` (foto e @ do cliente).
 - **Mensagens prontas do WhatsApp:** o objeto `MENSAGENS`. A mensagem do card de carro é montada automaticamente.
@@ -65,6 +65,7 @@ Tudo fica no `<script>` no fim do `index.html`, no bloco **CONFIGURAÇÃO**:
 ## Pendências (placeholders)
 | Placeholder | Onde | O que inserir |
 |---|---|---|
+| `[WHATSAPP_NUMBER]` | `index.html` → constante `WHATSAPP` (e `href` de fallback dos botões `data-wa`) | Número do WhatsApp, só dígitos (55 + DDD + número). **Sem ele, os botões não abrem a conversa.** O rodapé e as mensagens prontas se ajustam sozinhos |
 | `[HORARIO]` | `HORARIO` (contato e rodapé) | Horário de funcionamento (destaque "HORÁRIO" do Instagram) |
 | Endereço | `ENDERECO` | Confirmar complemento, cidade e CEP (Rio de Janeiro é inferência). Se confirmar, acrescente `addressLocality`/`postalCode` no JSON-LD |
 | `[CNPJ]` | Rodapé | CNPJ da loja |
