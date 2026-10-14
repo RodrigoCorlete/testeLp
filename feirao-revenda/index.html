@@ -37,11 +37,6 @@
     "slogan": "Mais de 18 anos realizando sonhos",
     "description": "Compra, venda, troca e financiamento de carros seminovos.",
     "image": "img/logo.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Av. Dom Hélder Câmara, 7522",
-      "addressCountry": "BR"
-    },
     "sameAs": ["https://www.instagram.com/feiraorevenda/"]
   }
   </script>
@@ -491,7 +486,7 @@
           <div class="media media--4x3">
             <!-- [FOTO NECESSÁRIA] foto real do galpão ou de um carro do estoque: img/hero.webp (960×720) -->
             <img src="img/hero.webp" alt="Pátio da Feirão Revenda com carros seminovos" width="960" height="720" fetchpriority="high" decoding="async">
-            <span class="media__fallback">[IMAGEM_HERO] img/hero.webp</span>
+            <span class="media__fallback">[IMAGEM_HERO]</span>
           </div>
           <div class="seal-wrap">
             <div class="seal">
@@ -626,7 +621,7 @@
           <dl>
             <div>
               <dt>Endereço</dt>
-              <dd data-endereco>Av. Dom Hélder Câmara, 7522 – Abolição, Rio de Janeiro – RJ</dd>
+              <dd data-endereco><span class="placeholder">[ENDERECO]</span></dd>
             </div>
             <div>
               <dt>Horário</dt>
@@ -634,7 +629,7 @@
             </div>
           </dl>
           <div class="visit__ctas">
-            <a class="btn btn--secondary" id="link-mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Dom%20H%C3%A9lder%20C%C3%A2mara%2C%207522%20Aboli%C3%A7%C3%A3o%20Rio%20de%20Janeiro" target="_blank" rel="noopener noreferrer">Como chegar<span class="visually-hidden"> (abre o Google Maps)</span></a>
+            <a class="btn btn--secondary" id="link-mapa" href="https://www.google.com/maps/search/?api=1&amp;query=%5BENDERECO%5D" target="_blank" rel="noopener noreferrer">Como chegar<span class="visually-hidden"> (abre o Google Maps)</span></a>
             <a class="btn btn--primary" data-wa="contato" href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener noreferrer">
               <span class="wa-icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
               Chamar no WhatsApp<span class="visually-hidden"> (abre o WhatsApp)</span>
@@ -642,7 +637,7 @@
           </div>
         </div>
         <!-- Mapa: o iframe só é criado quando a seção aparece na tela -->
-        <div class="map" id="mapa" aria-label="Mapa da localização da loja">Carregando mapa…</div>
+        <div class="map" id="mapa" aria-label="Mapa da localização da loja">[MAPA]</div>
       </div>
     </section>
 
@@ -669,7 +664,7 @@
         <div>
           <h2>Loja</h2>
           <ul role="list">
-            <li data-endereco>Av. Dom Hélder Câmara, 7522 – Abolição, Rio de Janeiro – RJ</li>
+            <li data-endereco><span class="placeholder">[ENDERECO]</span></li>
             <li>Horário: <span data-horario><span class="placeholder">[HORARIO]</span></span></li>
           </ul>
         </div>
@@ -708,18 +703,18 @@
        CONFIGURAÇÃO — edite aqui
        ========================================================= */
     var WHATSAPP = '[WHATSAPP_NUMBER]'; // [INFORMAÇÃO NECESSÁRIA] 55 + DDD + número, só dígitos (ex.: 5521900000000)
-    var ENDERECO = 'Av. Dom Hélder Câmara, 7522 – Abolição, Rio de Janeiro – RJ'; // confirmar complemento, cidade e CEP
+    var ENDERECO = '[ENDERECO]'; // [INFORMAÇÃO NECESSÁRIA] endereço completo com complemento, cidade e CEP
     var HORARIO = '[HORARIO]'; // [INFORMAÇÃO NECESSÁRIA] ex.: 'Seg. a sex. 9h–18h · Sáb. 9h–14h'
     var INSTAGRAM = 'https://www.instagram.com/feiraorevenda/';
 
-    // Estoque: os cards são gerados a partir daqui. Preços vindos do Instagram (confirmar antes de publicar).
+    // Estoque: os cards são gerados a partir daqui. preco: número (ex.: 84999.99) ou '[PRECO]' enquanto não confirmado.
     var carros = [
-      { modelo: 'Honda City Sedan EXL 1.5', ano: '2024', comb: 'Flex', cambio: 'Automático', preco: 84999.99, foto: 'img/city.webp' },
-      { modelo: 'Citroën C3 Tendance 1.5', ano: '2013', comb: 'Flex', cambio: '', preco: 32999.99, foto: 'img/c3.webp' },
-      { modelo: 'Chevrolet Spin LT 1.8', ano: '2015', comb: 'GNV', cambio: '', preco: 35999.99, foto: 'img/spin.webp' },
-      { modelo: 'Renault Logan Expression 1.6', ano: '2015', comb: 'GNV', cambio: '', preco: 29999.99, foto: 'img/logan.webp' },
-      { modelo: 'Toyota Etios Sedan XLS 1.5', ano: '2015', comb: 'GNV', cambio: '', preco: 29999.99, foto: 'img/etios.webp' },
-      { modelo: 'Chevrolet Cobalt LT 1.4', ano: '2020', comb: 'GNV', cambio: '', preco: 43999.99, foto: 'img/cobalt.webp' }
+      { modelo: 'Honda City Sedan EXL 1.5', ano: '2024', comb: 'Flex', cambio: 'Automático', preco: '[PRECO]', foto: 'img/city.webp' },
+      { modelo: 'Citroën C3 Tendance 1.5', ano: '2013', comb: 'Flex', cambio: '', preco: '[PRECO]', foto: 'img/c3.webp' },
+      { modelo: 'Chevrolet Spin LT 1.8', ano: '2015', comb: 'GNV', cambio: '', preco: '[PRECO]', foto: 'img/spin.webp' },
+      { modelo: 'Renault Logan Expression 1.6', ano: '2015', comb: 'GNV', cambio: '', preco: '[PRECO]', foto: 'img/logan.webp' },
+      { modelo: 'Toyota Etios Sedan XLS 1.5', ano: '2015', comb: 'GNV', cambio: '', preco: '[PRECO]', foto: 'img/etios.webp' },
+      { modelo: 'Chevrolet Cobalt LT 1.4', ano: '2020', comb: 'GNV', cambio: '', preco: '[PRECO]', foto: 'img/cobalt.webp' }
     ];
 
     // Entregas: [INFORMAÇÃO NECESSÁRIA] fotos reais + @ do cliente (com autorização)
@@ -802,11 +797,12 @@
     (function renderCarros() {
       var list = document.getElementById('lista-carros');
       if (!list) return;
-      carros.forEach(function (c) {
-        var preco = brl.format(c.preco);
+      carros.forEach(function (c, i) {
+        var temPreco = typeof c.preco === 'number';
+        var preco = temPreco ? brl.format(c.preco) : c.preco;
         var li = el('li');
         var card = el('article', 'car-card');
-        var m = media(c.foto, c.modelo + ' ' + c.ano, 'media--4x3', 800, 600, c.modelo + ' ' + c.ano);
+        var m = media(c.foto, c.modelo + ' ' + c.ano, 'media--4x3', 800, 600, '[IMAGEM_CARRO_0' + (i + 1) + ']');
         m.appendChild(el('span', 'car-card__tag', 'VENDE-SE'));
         var year = el('span', 'car-card__year', c.ano);
         year.setAttribute('aria-hidden', 'true');
@@ -829,7 +825,7 @@
         price.appendChild(el('small', null, 'Apenas'));
         price.appendChild(el('strong', null, preco));
         body.appendChild(price);
-        var msg = 'Olá! Vi no site o ' + c.modelo + ' ' + c.ano + ' por ' + preco + '. Ainda está disponível?';
+        var msg = 'Olá! Vi no site o ' + c.modelo + ' ' + c.ano + (temPreco ? ' por ' + preco : '') + '. Ainda está disponível?';
         var btn = waButton('Tenho interesse', 'card', msg, 'btn--block');
         btn.setAttribute('aria-label', 'Tenho interesse no ' + c.modelo + ' ' + c.ano + ' (abre o WhatsApp)');
         body.appendChild(btn);
@@ -848,7 +844,7 @@
       entregas.forEach(function (e, i) {
         var li = el('li');
         var fig = el('figure', 'delivery');
-        fig.appendChild(media(e.foto, 'Entrega de carro ao cliente ' + e.cliente, 'media--4x5', 800, 1000, '[FOTO_ENTREGA_0' + (i + 1) + ']'));
+        fig.appendChild(media(e.foto, 'Entrega de carro ao cliente ' + e.cliente, 'media--4x5', 800, 1000, '[IMAGEM_ENTREGA_0' + (i + 1) + ']'));
         var cap = el('figcaption');
         cap.appendChild(document.createTextNode('Nosso cliente '));
         cap.appendChild(el('strong', null, e.cliente));
@@ -874,7 +870,9 @@
       if (a) track(a.getAttribute('data-wa'));
     });
 
-    document.querySelectorAll('[data-endereco]').forEach(function (n) { n.textContent = ENDERECO; });
+    if (!isPlaceholder(ENDERECO)) {
+      document.querySelectorAll('[data-endereco]').forEach(function (n) { n.textContent = ENDERECO; });
+    }
     if (!isPlaceholder(HORARIO)) {
       document.querySelectorAll('[data-horario]').forEach(function (n) { n.textContent = HORARIO; });
     }
@@ -944,6 +942,7 @@
         box.textContent = '';
         box.appendChild(f);
       }
+      if (isPlaceholder(ENDERECO)) { box.textContent = '[MAPA]'; return; }
       if (!('IntersectionObserver' in window)) { load(); return; }
       var io = new IntersectionObserver(function (entries) {
         if (entries[0].isIntersecting) { io.disconnect(); load(); }

@@ -58,24 +58,24 @@ Tudo fica no `<script>` no fim do `index.html`, no bloco **CONFIGURAÇÃO**:
 - **Entregas:** o array `entregas` (foto e @ do cliente).
 - **Mensagens prontas do WhatsApp:** o objeto `MENSAGENS`. A mensagem do card de carro é montada automaticamente.
 - **Cores e fontes:** os tokens em `:root`, no `<style>`.
-- **Imagens:** substitua os arquivos em `img/` **mantendo o mesmo nome**. Se uma foto for apagada, aparece um bloco escuro com o nome do carro no lugar.
+- **Imagens:** substitua os arquivos em `img/` **mantendo o mesmo nome**. Se uma foto for apagada, aparece um bloco escuro com o nome do campo no lugar.
 - **SEO:** fica no `<head>` (title, description, Open Graph e JSON-LD `AutoDealer`). Depois de definir o domínio, descomente o `canonical`/`og:url` e torne a `og:image` absoluta.
 - **Analytics:** todo clique em WhatsApp dispara `dataLayer.push({event:"whatsapp_click", origem})` quando existir um `dataLayer` (GTM/GA4). Nenhum script de analytics foi instalado, porque a SPEC não traz IDs.
 
 ## Pendências (placeholders)
+Na página aparece apenas o nome do campo entre colchetes. Para preencher, edite o bloco **CONFIGURAÇÃO** no fim do `index.html` ou substitua o arquivo em `img/` mantendo o mesmo nome.
+
 | Placeholder | Onde | O que inserir |
 |---|---|---|
-| `[WHATSAPP_NUMBER]` | `index.html` → constante `WHATSAPP` (e `href` de fallback dos botões `data-wa`) | Número do WhatsApp, só dígitos (55 + DDD + número). **Sem ele, os botões não abrem a conversa.** O rodapé e as mensagens prontas se ajustam sozinhos |
-| `[HORARIO]` | `HORARIO` (contato e rodapé) | Horário de funcionamento (destaque "HORÁRIO" do Instagram) |
-| Endereço | `ENDERECO` | Confirmar complemento, cidade e CEP (Rio de Janeiro é inferência). Se confirmar, acrescente `addressLocality`/`postalCode` no JSON-LD |
+| `[WHATSAPP_NUMBER]` | Constante `WHATSAPP` (e o `href` de fallback dos botões `data-wa`) | Número do WhatsApp, só dígitos (55 + DDD + número). **Sem ele, os botões não abrem a conversa.** |
+| `[HORARIO]` | Constante `HORARIO` | Horário de funcionamento |
+| `[ENDERECO]` | Constante `ENDERECO` (e o link "Como chegar" no HTML) | Endereço completo, com complemento, cidade e CEP. O mapa (`[MAPA]`) carrega sozinho quando o endereço é preenchido. Acrescente também o `address` no JSON-LD |
 | `[CNPJ]` | Rodapé | CNPJ da loja |
-| `[DOMINIO]` | `<head>` (comentado) | Domínio do site ("www.fe…" aparece cortado num Reel) |
-| `img/logo.png` | Header, rodapé e favicon | **Logo oficial** em alta resolução. O arquivo atual é provisório e mostra só o nome em texto |
-| `img/hero.webp` | Hero (960×720) | Foto real do galpão ou de um carro do estoque |
-| `img/city.webp`, `c3`, `spin`, `logan`, `etios`, `cobalt` | Estoque (800×600, 4:3) | Fotos dos 6 carros, recortados sobre fundo neutro como nos posts |
-| `img/entrega-1..4.webp` | Sonhos realizados (800×1000, 4:5) | Fotos reais de entregas, **com autorização dos clientes** |
-| `[@CLIENTE_01..04]` | Array `entregas` | @ do Instagram de cada cliente |
-| `img/og-image.jpg` | Open Graph (1200×630) | Imagem de compartilhamento com o logo |
-| Preços | Array `carros` | Confirmar preço e disponibilidade dos 6 carros. Os valores vieram dos posts e podem estar desatualizados |
-| Financiamento | Card "Financiamento" | Condições (bancos, entrada), se quiserem divulgar. Hoje o card diz "Consulte as condições pelo WhatsApp" |
-| Público taxista/app | — | Confirmar com a loja. Pode virar uma seção específica |
+| `[PRECO]` | Array `carros` → `preco` | Preço confirmado de cada carro, como número (ex.: `84999.99`). A página formata em R$ e inclui o valor na mensagem do WhatsApp |
+| `[LOGO]` | `img/logo.png` (header, rodapé e favicon) | Logo oficial |
+| `[IMAGEM_HERO]` | `img/hero.webp` (960×720) | Foto real do galpão ou de um carro do estoque |
+| `[IMAGEM_CARRO_01]`…`[IMAGEM_CARRO_06]` | `img/city.webp`, `c3`, `spin`, `logan`, `etios`, `cobalt` (800×600) | Fotos dos 6 carros, na ordem do array `carros` |
+| `[IMAGEM_ENTREGA_01]`…`[IMAGEM_ENTREGA_04]` | `img/entrega-1..4.webp` (800×1000) | Fotos reais de entregas, **com autorização dos clientes** |
+| `[@CLIENTE_01]`…`[@CLIENTE_04]` | Array `entregas` | @ do Instagram de cada cliente |
+| `[OG_IMAGE]` | `img/og-image.jpg` (1200×630) | Imagem de compartilhamento |
+| `[DOMINIO]` | `<head>` (comentado) | Domínio do site, para ativar o `canonical`/`og:url` e tornar a `og:image` absoluta |
