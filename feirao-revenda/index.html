@@ -708,6 +708,9 @@
        CONFIGURAÇÃO — edite aqui
        ========================================================= */
     var WHATSAPP = '5521XXXXXXXXX'; // [INFORMAÇÃO NECESSÁRIA] número completo: 55 + DDD + número, só dígitos
+    // Link de mensagem do WhatsApp Business (fornecido pela loja). Usado enquanto WHATSAPP não tiver o número.
+    // Esse tipo de link abre a conversa com a mensagem padrão configurada no app; não aceita mensagem personalizada.
+    var WHATSAPP_LINK = 'https://api.whatsapp.com/message/H3UEL2ALGQFVJ1?autoload=1&app_absent=0';
     var ENDERECO = 'Av. Dom Hélder Câmara, 7522 – Abolição, Rio de Janeiro – RJ'; // confirmar complemento, cidade e CEP
     var HORARIO = '[HORARIO]'; // [INFORMAÇÃO NECESSÁRIA] ex.: 'Seg. a sex. 9h–18h · Sáb. 9h–14h'
     var INSTAGRAM = 'https://www.instagram.com/feiraorevenda/';
@@ -743,6 +746,7 @@
     function isPlaceholder(v) { return !v || /\[|X/.test(v); }
 
     function waLink(msg) {
+      if (isPlaceholder(WHATSAPP) && WHATSAPP_LINK) return WHATSAPP_LINK;
       return 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg || MENSAGENS.padrao);
     }
 
@@ -882,6 +886,8 @@
       var d = WHATSAPP.replace(/^55/, '');
       var fmt = '(' + d.slice(0, 2) + ') ' + d.slice(2, d.length - 4) + '-' + d.slice(-4);
       document.querySelectorAll('[data-wa-numero]').forEach(function (n) { n.textContent = fmt; });
+    } else if (WHATSAPP_LINK) {
+      document.querySelectorAll('[data-wa-numero]').forEach(function (n) { n.textContent = 'fale conosco'; });
     }
     var mapa = document.getElementById('link-mapa');
     if (mapa) mapa.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(ENDERECO);

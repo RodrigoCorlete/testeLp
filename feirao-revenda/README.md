@@ -53,7 +53,7 @@ Abra o `index.html` no navegador com um duplo clique. Opcionalmente, use a exten
 
 ## Personalização
 Tudo fica no `<script>` no fim do `index.html`, no bloco **CONFIGURAÇÃO**:
-- **WhatsApp, endereço, horário e Instagram:** as constantes `WHATSAPP`, `ENDERECO`, `HORARIO` e `INSTAGRAM`. Todos os botões e o rodapé usam esses valores.
+- **WhatsApp, endereço, horário e Instagram:** as constantes `WHATSAPP` (número), `WHATSAPP_LINK` (link de mensagem do WhatsApp Business, usado enquanto não houver número), `ENDERECO`, `HORARIO` e `INSTAGRAM`. Todos os botões e o rodapé usam esses valores.
 - **Estoque:** o array `carros` (modelo, ano, combustível, câmbio, preço e foto). Os cards são gerados a partir dele.
 - **Entregas:** o array `entregas` (foto e @ do cliente).
 - **Mensagens prontas do WhatsApp:** o objeto `MENSAGENS`. A mensagem do card de carro é montada automaticamente.
@@ -65,8 +65,7 @@ Tudo fica no `<script>` no fim do `index.html`, no bloco **CONFIGURAÇÃO**:
 ## Pendências (placeholders)
 | Placeholder | Onde | O que inserir |
 |---|---|---|
-| `5521XXXXXXXXX` | `index.html` → `WHATSAPP` | Número completo do WhatsApp, só dígitos (55 + DDD + número). **Sem ele, os botões não abrem a conversa certa.** |
-| `[WHATSAPP_NUMBER]` | Rodapé | Preenchido automaticamente quando `WHATSAPP` for corrigido |
+| `5521XXXXXXXXX` | `index.html` → `WHATSAPP` | Número completo do WhatsApp, só dígitos (55 + DDD + número). **Hoje os botões usam o link de mensagem `WHATSAPP_LINK`** (WhatsApp Business), que funciona, mas abre sempre com a mensagem padrão do app. Com o número preenchido, cada botão volta a enviar a mensagem do contexto (ex.: o nome do carro) e o rodapé passa a exibir o número. |
 | `[HORARIO]` | `HORARIO` (contato e rodapé) | Horário de funcionamento (destaque "HORÁRIO" do Instagram) |
 | Endereço | `ENDERECO` | Confirmar complemento, cidade e CEP (Rio de Janeiro é inferência). Se confirmar, acrescente `addressLocality`/`postalCode` no JSON-LD |
 | `[CNPJ]` | Rodapé | CNPJ da loja |
