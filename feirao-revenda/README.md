@@ -6,21 +6,30 @@ Página de uma seção para a **Feirão Revenda** (seminovos, Abolição – RJ)
 - **CTA principal:** "Chamar no WhatsApp". Os secundários são "Ver carros disponíveis" (âncora) e "Avaliar meu usado", ambos com estilo de menor peso ou mensagem específica.
 
 ## Decisões de projeto
-- **Direção visual:** popular vibrante sobre fundo escuro, reinterpretando os posts "VENDE-SE" do Instagram (marinho + amarelo + dourado). O amarelo é reservado para ação e preço; o laranja aparece só em "REALIZADO".
-- **Paleta:** fundo `#0E131C`/`#131A26`, superfícies `#1B2331`/`#232D3F`, primária `#FCD033`, dourado `#FDAE29`, laranja `#FC8F1F`, texto `#FFFFFF`/`#B9C1CE`. Todas as cores vêm da SPEC (medidas nos prints). Os pares principais passam no WCAG AA: amarelo sobre marinho ≈ 11:1, marinho sobre amarelo ≈ 11:1 e cinza `#B9C1CE` sobre o fundo ≈ 10:1.
-- **Tipografia:** *Lilita One* (só no H1, no badge "VENDE-SE" e em "REALIZADO") lembra a letra grossa dos posts. *Poppins* 400/600/700/800 no resto.
-- **Ícone do WhatsApp:** glifo verde dentro de um disco marinho, porque verde direto sobre amarelo ficaria ilegível.
-- **Seções e por que existem:**
-  - **Hero:** proposta em 3 s.
-  - **Serviços:** mostra a amplitude da loja.
-  - **Estoque:** responde a "tem carro no meu bolso?".
-  - **Troca:** puxa quem tem um usado.
-  - **Diferenciais:** reduz objeções.
-  - **Sonhos realizados:** prova social com fotos reais.
-  - **Visite a loja:** confiança física.
+- **Layout de marketplace, com a Webmotors como referência:**
+  - fundo claro e header branco fixo;
+  - hero em faixa marinho com um card branco de atalhos ("O que você precisa?": Comprar, Vender, Trocar, Financiar), inspirado no card de busca da Webmotors, mas sem busca nem filtros (a SPEC não pede);
+  - grade de anúncios com contagem ("6 carros disponíveis").
+- **Cards de anúncio (padrão marketplace):**
+  - foto 4:3 com o selo "VENDE-SE";
+  - **MARCA MODELO** em caixa alta e versão em cinza;
+  - "Preço estimado*" com o valor em destaque;
+  - linha de especificações (ano · combustível · câmbio · local);
+  - checks "Documentação ok" e "Aceita seu usado na troca";
+  - botão "Tenho interesse".
+- **Identidade da marca:** marinho `#1B2331` nas faixas, nos textos e no rodapé; amarelo `#FCD033` para ação; dourado `#FDAE29` em detalhes sobre fundo escuro; laranja `#FC8F1F` só em "REALIZADO" (sobre marinho, para manter o contraste AA). Fontes: *Lilita One* (H1, "VENDE-SE", "REALIZADO") e *Poppins*.
+- **Preços:** os valores dos anúncios do Instagram aparecem como **"Preço estimado\*"**, com uma nota abaixo da grade. A mensagem do WhatsApp diz "com preço estimado de R$ …".
+- **Contraste:** marinho sobre branco ≈ 15:1, cinza `#5B6577` sobre branco ≈ 6:1, verde dos checks `#1E7F4F` sobre branco ≈ 5:1, amarelo sobre marinho ≈ 11:1.
+- **Seções:**
+  - **Hero com atalhos:** proposta de valor e serviços.
+  - **Carros à venda:** o estoque.
+  - **Troca:** passo a passo.
+  - **Diferenciais.**
+  - **Sonhos realizados:** prova social real.
+  - **Visite a loja.**
   - **CTA final.**
 - **Não incluído por falta de dados reais:** FAQ, depoimentos em texto, notas, número de vendas, garantia e bancos parceiros.
-- **Estrutura diferente do padrão (css/ js/ assets/):** a SPEC pede explicitamente **um único `index.html` + pasta `img/`** (CSS crítico inline, critério de aceite para a Hostinger). Por isso o CSS e o JS ficam dentro do próprio `index.html`, organizados em seções comentadas.
+- **Estrutura:** a SPEC pede **um único `index.html` + pasta `img/`** (critério de aceite para a Hostinger), por isso o CSS e o JS ficam dentro do `index.html`, em seções comentadas.
 
 ## Tecnologias
 HTML5, CSS3 e JavaScript puro, sem build e sem dependências. Recursos externos usados:
@@ -54,7 +63,7 @@ Abra o `index.html` no navegador com um duplo clique. Opcionalmente, use a exten
 ## Personalização
 Tudo fica no `<script>` no fim do `index.html`, no bloco **CONFIGURAÇÃO**:
 - **WhatsApp, endereço, horário e Instagram:** as constantes `WHATSAPP`, `ENDERECO`, `HORARIO` e `INSTAGRAM`. Todos os botões e o rodapé usam esses valores.
-- **Estoque:** o array `carros` (modelo, ano, combustível, câmbio, preço e foto). Os cards são gerados a partir dele.
+- **Estoque:** o array `carros` (marca, modelo, versão, ano, combustível, câmbio, preço estimado e foto). Os cards são gerados a partir dele.
 - **Entregas:** o array `entregas` (foto e @ do cliente).
 - **Mensagens prontas do WhatsApp:** o objeto `MENSAGENS`. A mensagem do card de carro é montada automaticamente.
 - **Cores e fontes:** os tokens em `:root`, no `<style>`.
@@ -71,9 +80,8 @@ Na página aparece apenas o nome do campo entre colchetes. Para preencher, edite
 | `[HORARIO]` | Constante `HORARIO` | Horário de funcionamento |
 | `[ENDERECO]` | Constante `ENDERECO` (e o link "Como chegar" no HTML) | Endereço completo, com complemento, cidade e CEP. O mapa (`[MAPA]`) carrega sozinho quando o endereço é preenchido. Acrescente também o `address` no JSON-LD |
 | `[CNPJ]` | Rodapé | CNPJ da loja |
-| `[PRECO]` | Array `carros` → `preco` | Preço confirmado de cada carro, como número (ex.: `84999.99`). A página formata em R$ e inclui o valor na mensagem do WhatsApp |
-| `[LOGO]` | `img/logo.png` (header, rodapé e favicon) | Logo oficial |
-| `[IMAGEM_HERO]` | `img/hero.webp` (960×720) | Foto real do galpão ou de um carro do estoque |
+| Preços estimados | Array `carros` → `preco` | Confirmar os 6 valores (vieram dos posts do Instagram). Se um preço não for confirmado, use `'[PRECO]'` |
+| `[LOGO]` | `img/logo.png` (header, rodapé e favicon) | Logo oficial (PNG com fundo transparente ou SVG). Ele aparece sobre o fundo branco do header e do rodapé |
 | `[IMAGEM_CARRO_01]`…`[IMAGEM_CARRO_06]` | `img/city.webp`, `c3`, `spin`, `logan`, `etios`, `cobalt` (800×600) | Fotos dos 6 carros, na ordem do array `carros` |
 | `[IMAGEM_ENTREGA_01]`…`[IMAGEM_ENTREGA_04]` | `img/entrega-1..4.webp` (800×1000) | Fotos reais de entregas, **com autorização dos clientes** |
 | `[@CLIENTE_01]`…`[@CLIENTE_04]` | Array `entregas` | @ do Instagram de cada cliente |
