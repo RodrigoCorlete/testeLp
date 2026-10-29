@@ -35,7 +35,21 @@ Landing page de moda feminina para a **Sorella** ([@sorella.sorella](https://www
   - Enquanto o número não estiver configurado, os botões de WhatsApp aparecem **desativados**, com o aviso "WhatsApp em configuração".
   - Não há conta de cliente nem cálculo de frete.
   - O feed do Instagram não é simulado: as imagens são cadastradas manualmente.
-- **Referências:** a afroditestore40 (estrutura comercial), a bluv/the-finds (limpeza visual, mobile-first, looks) e a usevitbrand/quem-somos (narrativa) foram usadas como orientação de estrutura, sem copiar layout, textos ou marca. Neste ambiente, o acesso a esses sites e ao Instagram estava bloqueado, e as fotos do Instagram não chegaram anexadas. Por isso, todas as imagens são placeholders com o nome do arquivo final.
+- **Referências:** a afroditestore40 (estrutura comercial), a bluv/the-finds (limpeza visual, mobile-first, looks) e a usevitbrand/quem-somos (narrativa) foram usadas como orientação de estrutura, sem copiar layout, textos ou marca. Neste ambiente, o acesso a esses sites e ao Instagram estava bloqueado.
+
+## Imagens enviadas e onde foram usadas
+| Imagem enviada | Origem aparente | Onde está |
+|---|---|---|
+| Post "Esquenta Black Friday" (conjunto em 4 cores, R$ 99,00) | **Sorella (real)** | Produto *Conjunto Cropped Babado + Pantalona Pala*, categoria Conjuntos, look "Um conjunto, quatro cores", Instagram 01 |
+| Cliente na loja com vestido longo verde e dourado | **Sorella (real)** | Produto *Vestido Longo Verde Estampado*, categoria Vestidos, look "Verde com detalhes dourados", Instagram 02 |
+| Modelo com vestido verde floral (alta resolução) | Não parece ser peça da Sorella | Hero e imagem de compartilhamento (OG), só como ambientação |
+| Arara com vestidos em tons naturais | Parece imagem gerada por IA ou de banco | Categoria Novidades e campanha "Tons da natureza" (ambientação) |
+| Vitrine com manequins e vestidos bordados | Parece imagem gerada por IA ou de outra loja | Categoria Mais vendidos e Nossa essência (ambientação) |
+
+Cuidados antes de publicar:
+- **Imagens de ambientação:** não representam produtos da loja. Substitua por fotos próprias da Sorella e confirme o direito de uso de cada imagem.
+- **Fotos reais da Sorella:** vieram de capturas de tela pequenas (cerca de 280px). Envie os arquivos originais para não perder nitidez.
+- **Preço:** o R$ 99,00 é da campanha **Esquenta Black Friday**. O card mostra essa observação (`nota` no `config.js`). Confirme a validade e o preço regular.
 
 ## Tecnologias
 HTML5, CSS3 e JavaScript puro, sem build e sem dependências. O único recurso externo é o Google Fonts (Cormorant Garamond e DM Sans).
@@ -66,7 +80,7 @@ Abra o `index.html` no navegador com um duplo clique. Opcionalmente, use a exten
 | Nome, logo, Instagram, WhatsApp, e-mail, endereço, CNPJ | `loja` |
 | Barra de benefícios (lista vazia = barra oculta) | `beneficios` |
 | Menu, filtros e categorias em destaque | `menu`, `filtros`, `categoriasDestaque` |
-| Produtos (nome, foto, preço, preço anterior, cores, tamanhos, categorias, esgotado) | `produtos`. Mude `produtosDemonstracao` para `false` quando os dados forem reais |
+| Produtos (nome, foto, preço, preço anterior, nota, cores, tamanhos, categorias, esgotado) | `produtos`. Use `demo: false` quando o produto for real |
 | Parcelamento (só se confirmado) | `parcelamento` |
 | Campanha sazonal (liga/desliga e período) | `campanha.ativa`, `campanha.inicio`, `campanha.fim` |
 | Complete o look | `looks` (lista de ids de produtos) |
@@ -99,21 +113,20 @@ Os comportamentos derivam desses dados:
 | `[EMAIL]`, `[ENDERECO]`, `[CNPJ]` | `loja` | Dados institucionais (use `''` no endereço se a loja for só online) |
 | `[HORARIO_ATENDIMENTO]` | `loja` e `atendimento` | Horário de atendimento |
 | `[BENEFICIO_01..03]` | `beneficios` | Só benefícios confirmados (ex.: entrega para todo o Brasil) |
-| Produtos de demonstração | `produtos` | Nomes, fotos, preços, cores, tamanhos e estoque reais |
+| Produtos de demonstração (`demo: true`) | `produtos` p02, p03, p04, p06 | Nomes, fotos, preços, cores, tamanhos e estoque reais |
+| Nome do vestido verde | `produtos` p05 | Confirmar o nome oficial e o preço |
 | `[PRECO]` | `produtos[].preco` | Preço de cada produto (número, ex.: `189.9`) |
 | `[TAMANHOS]` | `produtos[].tamanhos` | Grade de tamanhos |
 | Parcelamento | `parcelamento` | Só se confirmado |
 | `[TEXTO_ESSENCIA]` | `essencia.texto` | Texto institucional real |
 | `[FORMAS_DE_PAGAMENTO]`, `[REGRAS_DE_FRETE]`, `[POLITICA_DE_TROCAS]`, `[POLITICA_DE_PRIVACIDADE]`, `[DUVIDAS_FREQUENTES]` | `atendimento` | Políticas e informações confirmadas |
-| `[ALT_POST_01..06]` | `instagramPosts` | Descrição de cada foto e link da publicação |
-| `[FOTO_HERO]` | `assets/images/hero.webp` (1200×1500) | Foto editorial de uma modelo com uma peça da loja |
-| `[FOTO_CATEGORIA_*]` | `categoria-vestidos/conjuntos/novidades/mais-vendidos.webp` (800×1000) | Uma foto por categoria |
-| `[FOTO_PRODUTO_01..06]` | `produto-01..06.webp` (900×1200, 3:4) | Fotos dos produtos |
-| `[FOTO_CAMPANHA]` | `campanha.webp` (1600×900) | Foto ampla da campanha |
-| `[FOTO_LOOK_01..02]` | `look-01..02.webp` (900×1200) | Fotos de looks completos |
-| `[FOTO_ESSENCIA]` | `essencia.webp` (1000×1250) | Ambiente da loja, equipe ou modelo |
-| `[POST_01..06]` | `instagram-01..06.webp` (600×600) | Fotos do feed |
-| `[OG_IMAGE]` | `og-image.jpg` (1200×630) | Imagem de compartilhamento |
+| `[ALT_POST_03..06]` | `instagramPosts` | Fotos, descrições e links das publicações (01 e 02 já são posts reais; falta o link de cada publicação) |
+| Hero | `assets/images/hero.webp` (800×1000 ou maior) | Hoje é imagem de ambientação: trocar por foto editorial de uma peça da Sorella |
+| Categorias | `categoria-novidades.webp`, `categoria-mais-vendidos.webp` (800×1000) | Trocar as imagens de ambientação por fotos da loja; Vestidos e Conjuntos já são reais (enviar originais em alta) |
+| `[FOTO_PRODUTO_02/03/04/06]` | `produto-02/03/04/06.webp` (900×1200, 3:4) | Fotos dos produtos de demonstração |
+| Campanha | `campanha.webp` (1600×900) | Trocar a imagem de ambientação por foto da coleção |
+| Essência | `essencia.webp` (1000×1250) | Trocar a imagem de ambientação por foto do ambiente da loja, da equipe ou de uma modelo |
+| `[POST_03..06]` | `instagram-03..06.webp` (600×600) | Fotos do feed |
 | `[DOMINIO]` | `<head>` do `index.html` | Domínio do site |
 
 ## Validação realizada
@@ -125,6 +138,6 @@ Testes feitos no Chromium (Playwright) em 320, 375, 768 e 1440px:
 - **Busca:** "botanica" (sem acento) → 2 resultados; termo inexistente → estado "Nenhum produto encontrado".
 - **Detalhes do produto:** abre; cor trocada pelo teclado (setas); fecha com `Esc`; produto indisponível com o botão desativado.
 - **Minha seleção:** adiciona item com a cor escolhida, conta, persiste ao recarregar, remove e limpa.
-- **Campanha:** aplica o filtro "Tons da natureza" (3 produtos).
+- **Campanha:** aplica o filtro "Tons da natureza" (4 produtos).
 - **Políticas no rodapé:** abrem o item correspondente na seção de atendimento.
 - **WhatsApp:** botões desativados com aviso enquanto o número não existe.

@@ -154,7 +154,7 @@
   var grid = $('[data-products]');
   var chipsBox = $('[data-filters]');
 
-  if (C.produtosDemonstracao) { var dn = $('[data-demo-note]'); if (dn) dn.hidden = false; }
+  if (C.produtos.some(function (p) { return p.demo; })) { var dn = $('[data-demo-note]'); if (dn) dn.hidden = false; }
 
   if (chipsBox) {
     C.filtros.forEach(function (f) {
@@ -177,7 +177,7 @@
   function productCard(p) {
     var li = el('li', { class: 'product' + (p.esgotado ? ' is-soldout' : '') });
     var badges = el('div', { class: 'product__badges' });
-    if (C.produtosDemonstracao) badges.appendChild(el('span', { class: 'tag', text: 'Demonstração' }));
+    if (p.demo) badges.appendChild(el('span', { class: 'tag', text: 'Demonstração' }));
     if (p.esgotado) badges.appendChild(el('span', { class: 'tag tag--dark', text: 'Indisponível' }));
     if (isPromo(p)) badges.appendChild(el('span', { class: 'tag tag--dark', text: 'Promoção' }));
 
@@ -190,6 +190,7 @@
       el('button', { class: 'product__link', type: 'button', 'data-open-product': p.id, text: p.nome })
     ]));
     body.appendChild(priceNode(p));
+    if (p.nota) body.appendChild(el('p', { class: 'installments', text: p.nota }));
     if (has(C.parcelamento)) body.appendChild(el('p', { class: 'installments', text: C.parcelamento }));
     if (p.cores && p.cores.length) {
       var dots = el('div', { class: 'dots' });
@@ -382,15 +383,16 @@
 
     var img = $('[data-qv-img]', qv);
     img.src = p.foto; img.alt = p.alt;
-    $('[data-qv-demo]', qv).hidden = !C.produtosDemonstracao;
+    $('[data-qv-demo]', qv).hidden = !p.demo;
     $('[data-qv-name]', qv).textContent = p.nome;
     var price = $('[data-qv-price]', qv);
     price.textContent = '';
     var pn = priceNode(p);
     while (pn.firstChild) price.appendChild(pn.firstChild);
     var inst = $('[data-qv-installments]', qv);
-    inst.hidden = !has(C.parcelamento);
-    inst.textContent = C.parcelamento || '';
+    var extra = [p.nota, has(C.parcelamento) ? C.parcelamento : ''].filter(Boolean).join(' · ');
+    inst.hidden = !extra;
+    inst.textContent = extra;
     var sizes = $('[data-qv-sizes]', qv);
     sizes.textContent = '';
     sizes.appendChild(valueNode(p.tamanhos || '[TAMANHOS]'));
@@ -489,7 +491,7 @@
         ]));
       });
       var head = el('div', null, [
-        C.produtosDemonstracao ? el('p', { class: 'tag-demo', text: 'Demonstração' }) : null,
+        look.demo ? el('p', { class: 'tag-demo', text: 'Demonstração' }) : null,
         el('h3', { text: look.titulo })
       ]);
       ul.appendChild(el('li', { class: 'look' }, [media(look.foto, look.alt, '3x4', 900, 1200), head, items]));
