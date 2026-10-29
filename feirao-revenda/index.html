@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feirão Revenda | Seminovos na Abolição – RJ | Compra, Venda e Troca</title>
+  <meta name="description" content="Há mais de 18 anos realizando sonhos. Seminovos com documentação ok, aceitamos seu usado na troca e financiamos. Fale pelo WhatsApp.">
+  <meta name="theme-color" content="#1B2331">
+  <!-- [DOMINIO]: quando o domínio estiver definido, descomente e preencha.
+  <link rel="canonical" href="https://[DOMINIO]/">
+  <meta property="og:url" content="https://[DOMINIO]/">
+  -->
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Feirão Revenda">
+  <meta property="og:title" content="Feirão Revenda | Mais de 18 anos realizando sonhos">
+  <meta property="og:description" content="Seminovos com documentação ok, aceitamos seu usado na troca e financiamos. Fale pelo WhatsApp.">
+  <!-- [DOMINIO]: troque por URL absoluta (https://[DOMINIO]/img/og-image.jpg) -->
+  <meta property="og:image" content="img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/logo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@400;600;700;800&display=swap">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoDealer",
+    "name": "Feirão Revenda",
+    "slogan": "Mais de 18 anos realizando sonhos",
+    "description": "Compra, venda, troca e financiamento de carros seminovos.",
+    "image": "img/logo.png",
+    "sameAs": ["https://www.instagram.com/feiraorevenda/"]
+  }
+  </script>
+
+  <style>
+    /* =========================================================
+       1. TOKENS
+       Layout de marketplace (referência: Webmotors) com as cores da marca.
+       ========================================================= */
+    :root {
+      /* Cores */
+      --color-background: #F4F5F7;       /* página (cinza claro de marketplace) */
+      --color-surface: #FFFFFF;          /* cards, header */
+      --color-surface-2: #EEF0F4;        /* fundo de foto / hover */
+      --color-brand: #1B2331;            /* marinho da marca: faixas, textos fortes */
+      --color-brand-dark: #0E131C;       /* rodapé */
+      --color-brand-2: #232D3F;          /* superfície sobre marinho */
+      --color-primary: #FCD033;          /* ação (botões) */
+      --color-primary-hover: #EDC330;
+      --color-primary-contrast: #1B2331;
+      --color-secondary: #FDAE29;        /* dourado: detalhes sobre fundo escuro */
+      --color-accent: #1B2331;           /* foco sobre fundo claro */
+      --color-accent-dark: #FCD033;      /* foco sobre fundo escuro */
+      --color-celebration: #FC8F1F;      /* SOMENTE "REALIZADO" (sobre marinho) */
+      --color-text: #1B2331;
+      --color-muted: #5B6577;
+      --color-text-inverse: #FFFFFF;
+      --color-muted-inverse: #B9C1CE;
+      --color-border: #E1E5EB;
+      --color-border-dark: #2C374B;
+      --color-success: #25D366;          /* ícone do WhatsApp */
+      --color-ok: #1E7F4F;               /* check "Documentação ok" (AA sobre branco) */
+      --color-header: rgba(255, 255, 255, 0.94);
+      --color-bar: rgba(255, 255, 255, 0.96);
+
+      /* Tipografia */
+      --font-display: "Lilita One", "Arial Black", system-ui, sans-serif;
+      --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --fs-xs: 0.8125rem;
+      --fs-sm: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+      --fs-base: 1rem;
+      --fs-md: clamp(1.0625rem, 1.03rem + 0.15vw, 1.1875rem);
+      --fs-price: clamp(1.5rem, 1.4rem + 0.5vw, 1.75rem);
+      --fs-xl: clamp(1.625rem, 1.3rem + 1.4vw, 2.25rem);
+      --fs-2xl: clamp(2.25rem, 1.7rem + 2.6vw, 3.5rem);
+      --lh-tight: 1.1;
+      --lh-snug: 1.3;
+      --lh-base: 1.6;
+
+      /* Espaçamento */
+      --space-2xs: 0.25rem;
+      --space-xs: 0.5rem;
+      --space-sm: 0.75rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+      --section-padding: 3.5rem;
+
+      /* Forma e profundidade */
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-pill: 999px;
+      --shadow-sm: 0 1px 3px rgba(27, 35, 49, 0.08), 0 1px 2px rgba(27, 35, 49, 0.06);
+      --shadow-md: 0 8px 24px rgba(27, 35, 49, 0.14);
+      --border-strong: 2px;
+
+      /* Layout e movimento */
+      --container: 1200px;
+      --gutter: 1rem;
+      --header-height: 4rem;
+      --tap: 48px;
+      --btn-height: 48px;
+      --stickybar-height: 4.5rem;
+      --transition: 150ms ease;
+      --transition-bar: 200ms ease;
+    }
+
+    /* =========================================================
+       2. RESET
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + var(--space-md)); }
+    img, svg, video, iframe { max-width: 100%; display: block; }
+    img { height: auto; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+
+    /* =========================================================
+       3. BASE
+       ========================================================= */
+    body {
+      font-family: var(--font-body);
+      font-size: var(--fs-base);
+      line-height: var(--lh-base);
+      color: var(--color-text);
+      background: var(--color-background);
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { line-height: var(--lh-snug); overflow-wrap: anywhere; }
+    h2 { font-size: var(--fs-xl); font-weight: 800; letter-spacing: -0.01em; }
+    p { max-width: 62ch; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; border-radius: var(--radius-sm); }
+    .on-dark :focus-visible { outline-color: var(--color-accent-dark); }
+
+    /* =========================================================
+       4. LAYOUT
+       ========================================================= */
+    .container { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; }
+    .section { padding-block: var(--section-padding); }
+    .section--white { background: var(--color-surface); }
+    .section--brand { background: var(--color-brand); color: var(--color-text-inverse); }
+    .section__head { margin-bottom: var(--space-lg); }
+    .section__head p { color: var(--color-muted); margin-top: var(--space-2xs); }
+    .section--brand .section__head p { color: var(--color-muted-inverse); }
+
+    /* =========================================================
+       5. COMPONENTES
+       ========================================================= */
+    /* Botões */
+    .btn {
+      position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-sm);
+      min-height: var(--btn-height); padding: 0 var(--space-lg);
+      border-radius: var(--radius-md); border: var(--border-strong) solid transparent;
+      font-weight: 700; font-size: var(--fs-base); text-decoration: none; line-height: 1.2; text-align: center;
+      transition: background-color var(--transition), transform var(--transition), border-color var(--transition), color var(--transition);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: scale(.98); }
+    .btn--primary { background: var(--color-primary); color: var(--color-primary-contrast); }
+    .btn--primary:hover { background: var(--color-primary-hover); }
+    .btn--secondary { background: transparent; color: var(--color-brand); border-color: var(--color-brand); }
+    .btn--secondary:hover { background: var(--color-surface-2); }
+    .on-dark .btn--secondary { color: var(--color-primary); border-color: var(--color-primary); }
+    .on-dark .btn--secondary:hover { background: var(--color-brand-2); }
+    .btn--dark { background: var(--color-brand); color: var(--color-primary); }
+    .btn--dark:hover { background: var(--color-brand-2); }
+    .btn--block { width: 100%; }
+    .wa-icon {
+      flex: none; width: 28px; height: 28px; border-radius: var(--radius-pill);
+      display: grid; place-items: center; background: var(--color-brand);
+    }
+    .wa-icon svg { width: 18px; height: 18px; fill: var(--color-success); }
+
+    /* Badge */
+    .badge {
+      display: inline-flex; align-items: center; gap: var(--space-xs);
+      padding: var(--space-2xs) var(--space-sm);
+      border: 1px solid var(--color-secondary); border-radius: var(--radius-pill);
+      color: var(--color-secondary); background: var(--color-brand-2);
+      font-size: var(--fs-xs); font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    }
+    .badge svg { width: 12px; height: 12px; fill: var(--color-secondary); }
+
+    /* Lista com check */
+    .checks { display: grid; gap: var(--space-xs); }
+    .checks li { display: flex; align-items: flex-start; gap: var(--space-xs); }
+    .checks svg { flex: none; width: 20px; height: 20px; margin-top: 2px; fill: var(--color-ok); }
+
+    /* Header (branco, como marketplace) */
+    .site-header {
+      position: sticky; top: 0; z-index: 50; height: var(--header-height);
+      background: var(--color-header); border-bottom: 1px solid var(--color-border);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      transition: box-shadow var(--transition);
+    }
+    .site-header.is-scrolled { box-shadow: var(--shadow-md); }
+    .site-header .container { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); }
+    .brand { display: inline-flex; align-items: center; min-height: var(--tap); text-decoration: none; }
+    .brand img { height: 44px; width: auto; }
+    .nav { display: none; }
+    .nav a {
+      display: inline-flex; align-items: center; min-height: var(--tap); padding-inline: var(--space-sm);
+      color: var(--color-text); text-decoration: none; font-weight: 600; font-size: var(--fs-sm);
+      border-bottom: 3px solid transparent; transition: border-color var(--transition);
+    }
+    .nav a:hover { border-color: var(--color-primary); }
+    .header-cta { min-height: 44px; padding-inline: var(--space-md); font-size: var(--fs-sm); }
+    .header-cta .wa-icon { width: 24px; height: 24px; }
+    .header-cta .wa-icon svg { width: 15px; height: 15px; }
+
+    /* Mídia com proporção fixa */
+    .media { position: relative; overflow: hidden; background: var(--color-surface-2); }
+    .media img { width: 100%; height: 100%; object-fit: cover; }
+    .media--4x3 { aspect-ratio: 4 / 3; }
+    .media--4x5 { aspect-ratio: 4 / 5; }
+    .media__fallback {
+      display: none; position: absolute; inset: 0; place-items: center; padding: var(--space-md);
+      text-align: center; color: var(--color-muted); font-weight: 600; font-size: var(--fs-sm);
+    }
+    .media.is-missing img { display: none; }
+    .media.is-missing .media__fallback { display: grid; }
+
+    /* Card de anúncio (estilo marketplace) */
+    .car-card {
+      display: flex; flex-direction: column; height: 100%;
+      background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .car-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .car-card__chip {
+      position: absolute; top: var(--space-sm); left: var(--space-sm); z-index: 1;
+      padding: var(--space-2xs) var(--space-sm); border-radius: var(--radius-sm);
+      background: var(--color-brand); color: var(--color-primary);
+      font-family: var(--font-display); font-size: var(--fs-sm); letter-spacing: .04em; line-height: 1.3;
+    }
+    .car-card__body { display: flex; flex-direction: column; flex: 1; padding: var(--space-md) var(--space-md) var(--space-lg); }
+    .car-card__title { font-size: var(--fs-md); font-weight: 800; text-transform: uppercase; letter-spacing: .01em; line-height: 1.25; }
+    .car-card__version { color: var(--color-muted); font-size: var(--fs-sm); text-transform: uppercase; margin-top: var(--space-2xs); }
+    .car-card__price { margin-top: var(--space-md); }
+    .car-card__price small { display: block; color: var(--color-muted); font-size: var(--fs-xs); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+    .car-card__price strong { display: block; font-size: var(--fs-price); font-weight: 800; line-height: 1.2; }
+    .car-card__specs {
+      display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-md);
+      margin-top: var(--space-md); padding-top: var(--space-sm); border-top: 1px solid var(--color-border);
+      color: var(--color-muted); font-size: var(--fs-sm);
+    }
+    .car-card__specs li { display: inline-flex; align-items: center; gap: var(--space-2xs); }
+    .car-card__specs svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .car-card .checks { font-size: var(--fs-sm); margin-top: var(--space-sm); }
+    .car-card__cta { margin-top: auto; padding-top: var(--space-md); }
+
+    /* Carrossel (galeria) */
+    .carousel { position: relative; }
+    .carousel__track {
+      position: relative; display: grid; grid-auto-flow: column; gap: var(--space-md);
+      overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory;
+      padding-bottom: var(--space-md); scrollbar-width: thin; scrollbar-color: var(--color-brand-2) transparent;
+    }
+    .carousel__track > * { scroll-snap-align: start; }
+    .carousel__nav { display: flex; justify-content: flex-end; gap: var(--space-xs); margin-top: var(--space-xs); }
+    .carousel__btn {
+      width: var(--tap); height: var(--tap); display: grid; place-items: center;
+      border-radius: var(--radius-pill); border: var(--border-strong) solid var(--color-primary);
+      background: transparent; color: var(--color-primary);
+      transition: background-color var(--transition), color var(--transition);
+    }
+    .carousel__btn:hover { background: var(--color-primary); color: var(--color-primary-contrast); }
+    .carousel__btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* Footer */
+    .site-footer { background: var(--color-brand-dark); color: var(--color-muted-inverse); padding-block: var(--space-2xl) var(--space-xl); font-size: var(--fs-sm); }
+    .footer__grid { display: grid; gap: var(--space-xl); }
+    .footer__grid h2 { font-size: var(--fs-base); color: var(--color-text-inverse); margin-bottom: var(--space-xs); }
+    .footer__grid ul { display: grid; gap: var(--space-2xs); }
+    .footer__grid a { color: var(--color-muted-inverse); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+    .footer__grid a:hover { color: var(--color-primary); }
+    .footer__logo { display: inline-block; padding: var(--space-xs) var(--space-sm); margin-bottom: var(--space-sm); background: var(--color-surface); border-radius: var(--radius-md); }
+    .footer__logo img { height: 48px; width: auto; }
+    .footer__bottom { margin-top: var(--space-xl); padding-top: var(--space-lg); border-top: 1px solid var(--color-border-dark); }
+
+    /* =========================================================
+       6. SEÇÕES
+       ========================================================= */
+    .skip-link {
+      position: absolute; left: var(--space-md); top: -100px; z-index: 100;
+      padding: var(--space-sm) var(--space-md); background: var(--color-primary); color: var(--color-primary-contrast);
+      border-radius: var(--radius-md); font-weight: 700;
+    }
+    .skip-link:focus { top: var(--space-md); }
+
+    /* Hero: faixa marinho + card de atalhos (inspirado no card de busca da Webmotors, sem busca) */
+    .hero { background: var(--color-brand); color: var(--color-text-inverse); padding-block: var(--space-xl) var(--space-2xl); }
+    .hero__grid { display: grid; gap: var(--space-xl); align-items: center; }
+    .hero__content { animation: fade-in 300ms ease-out both; }
+    .hero h1 {
+      font-family: var(--font-display); font-weight: 400; font-size: var(--fs-2xl); line-height: var(--lh-tight);
+      margin-block: var(--space-md); letter-spacing: .005em;
+    }
+    .hero h1 .hl { color: var(--color-primary); }
+    .hero__sub { color: var(--color-muted-inverse); font-size: var(--fs-md); }
+    .hero__ctas { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-lg); }
+    .hero__ctas .btn { flex: 1 1 15rem; }
+
+    .quick {
+      background: var(--color-surface); color: var(--color-text); border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md); padding: var(--space-lg);
+    }
+    .quick :focus-visible { outline-color: var(--color-accent); }
+    .quick h2 { font-size: var(--fs-md); font-weight: 800; }
+    .quick > p { color: var(--color-muted); font-size: var(--fs-sm); margin-top: var(--space-2xs); }
+    .quick__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-sm); margin-top: var(--space-md); }
+    .quick__grid li { display: flex; }
+    .quick__item {
+      display: flex; flex-direction: column; gap: var(--space-2xs); width: 100%;
+      padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md);
+      text-decoration: none; transition: border-color var(--transition), background-color var(--transition);
+    }
+    .quick__item:hover { border-color: var(--color-brand); background: var(--color-surface-2); }
+    .quick__item svg { width: 28px; height: 28px; fill: none; stroke: var(--color-brand); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .quick__item strong { font-size: var(--fs-base); }
+    .quick__item > span { color: var(--color-muted); font-size: var(--fs-xs); line-height: 1.4; }
+
+    /* Estoque */
+    .stock__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-sm); }
+    .stock__count { color: var(--color-muted); font-size: var(--fs-sm); font-weight: 600; }
+    .stock__grid { display: grid; gap: var(--space-md); }
+    .stock__more { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-md); margin-top: var(--space-xl); padding: var(--space-lg); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
+    .stock__more p { color: var(--color-muted); }
+    .stock__note { margin-top: var(--space-md); font-size: var(--fs-xs); color: var(--color-muted); max-width: none; }
+
+    /* Troca */
+    .trade { display: grid; gap: var(--space-lg); align-items: center; }
+    .trade p { color: var(--color-muted); margin-top: var(--space-xs); }
+    .trade__steps { display: grid; gap: var(--space-sm); margin-bottom: var(--space-lg); counter-reset: step; }
+    .trade__steps li {
+      display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-md);
+      background: var(--color-background); border-radius: var(--radius-md); font-weight: 600;
+    }
+    .trade__steps li::before {
+      counter-increment: step; content: counter(step);
+      flex: none; width: 32px; height: 32px; display: grid; place-items: center;
+      border-radius: var(--radius-pill); background: var(--color-primary); color: var(--color-primary-contrast); font-weight: 800;
+    }
+
+    /* Diferenciais */
+    .why__list { display: grid; gap: var(--space-sm); }
+    .why__list li {
+      display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-md);
+      background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md);
+      font-weight: 600;
+    }
+    .why__list svg { flex: none; width: 24px; height: 24px; fill: var(--color-ok); }
+
+    /* Sonhos realizados */
+    .dreams h2 .realizado { display: block; font-family: var(--font-display); font-weight: 400; color: var(--color-celebration); font-size: var(--fs-2xl); line-height: 1; letter-spacing: .02em; }
+    #lista-entregas { grid-auto-columns: 72%; }
+    .delivery { margin: 0; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-brand-2); }
+    .delivery .media { background: var(--color-brand-2); }
+    .delivery .media__fallback { color: var(--color-muted-inverse); }
+    .delivery figcaption { padding: var(--space-sm) var(--space-md); font-size: var(--fs-sm); color: var(--color-muted-inverse); }
+    .delivery figcaption strong { color: var(--color-text-inverse); }
+    .dreams__cta { margin-top: var(--space-lg); }
+
+    /* Contato */
+    .visit { display: grid; gap: var(--space-xl); }
+    .visit__info dl { display: grid; gap: var(--space-md); margin-block: var(--space-lg); }
+    .visit__info dt { font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--color-muted); }
+    .visit__info dd { margin: 0; font-weight: 600; }
+    .visit__ctas { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+    .visit__ctas .btn { flex: 1 1 14rem; }
+    .map { aspect-ratio: 4 / 3; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface-2); border: 1px solid var(--color-border); display: grid; place-items: center; color: var(--color-muted); font-size: var(--fs-sm); font-weight: 600; text-align: center; }
+    .map iframe { width: 100%; height: 100%; border: 0; }
+
+    /* CTA final */
+    .final { background: var(--color-primary); color: var(--color-primary-contrast); text-align: center; }
+    .final h2 { max-width: 22ch; margin-inline: auto; }
+    .final .btn { margin-top: var(--space-lg); }
+
+    /* Fixos */
+    .sticky-bar {
+      position: fixed; inset: auto 0 0 0; z-index: 40; padding: var(--space-sm) var(--gutter) calc(var(--space-sm) + env(safe-area-inset-bottom));
+      background: var(--color-bar); border-top: 1px solid var(--color-border); box-shadow: var(--shadow-md);
+      transform: translateY(110%); visibility: hidden; transition: transform var(--transition-bar), visibility var(--transition-bar);
+    }
+    .wa-float {
+      position: fixed; right: var(--space-lg); bottom: var(--space-lg); z-index: 40;
+      width: 60px; height: 60px; border-radius: var(--radius-pill); display: none; place-items: center;
+      background: var(--color-primary); box-shadow: var(--shadow-md);
+      transform: translateY(150%); visibility: hidden; transition: transform var(--transition-bar), visibility var(--transition-bar);
+    }
+    .wa-float .wa-icon { width: 40px; height: 40px; }
+    .wa-float .wa-icon svg { width: 24px; height: 24px; }
+    body.show-fixed .sticky-bar, body.show-fixed .wa-float { transform: none; visibility: visible; }
+    body { padding-bottom: var(--stickybar-height); }
+
+    /* =========================================================
+       7. UTILITÁRIOS
+       ========================================================= */
+    .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .placeholder { font-weight: 700; }
+    @keyframes fade-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    /* =========================================================
+       8. MEDIA QUERIES (mobile first)
+       ========================================================= */
+    @media (min-width: 600px) {
+      .stock__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 768px) {
+      :root { --gutter: 1.5rem; }
+      .quick__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      #lista-entregas { grid-auto-columns: calc((100% - 2 * var(--space-md)) / 3); }
+      .trade { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+      .why__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer__grid { grid-template-columns: 1.2fr 1fr 1fr; }
+    }
+    @media (min-width: 1024px) {
+      :root { --section-padding: 5rem; }
+      .nav { display: flex; gap: var(--space-xs); }
+      .hero { padding-block: var(--space-2xl); }
+      .hero__grid { grid-template-columns: 1fr 1fr; gap: var(--space-2xl); }
+      .quick__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stock__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg); }
+      .why__list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      #lista-entregas { grid-auto-columns: calc((100% - 3 * var(--space-md)) / 4); }
+      .visit { grid-template-columns: 1fr 1fr; align-items: center; }
+      .sticky-bar { display: none; }
+      .wa-float { display: grid; }
+      body { padding-bottom: 0; }
+    }
+
+    /* =========================================================
+       9. MOVIMENTO REDUZIDO
+       ========================================================= */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Sprite de ícones (SVG inline) -->
+  <svg width="0" height="0" class="visually-hidden" aria-hidden="true" focusable="false">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.24 8.24 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06a6.7 6.7 0 0 1-1.99-1.23 7.46 7.46 0 0 1-1.38-1.72c-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1.2 14.2-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7Z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 2.9 6.9 7.1.6-5.4 4.7 1.6 7L12 17.5 5.8 21.2l1.6-7L2 9.5l7.1-.6L12 2Z"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></symbol>
+    <symbol id="i-fuel" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v16M3 21h13M4 10h11M15 8l3 3v6a1.5 1.5 0 0 0 3 0V9l-3-3"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6 8v8M12 8v8M18 8v4H6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  </svg>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#conteudo" aria-label="Feirão Revenda, início">
+        <!-- [LOGO] substitua img/logo.png pelo logo oficial -->
+        <img src="img/logo.png" alt="Feirão Revenda" width="110" height="44">
+      </a>
+      <nav class="nav" aria-label="Seções da página">
+        <a href="#estoque">Comprar</a>
+        <a href="#troca">Troca</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn btn--primary header-cta" data-wa="header" href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener noreferrer">
+        <span class="wa-icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
+        WhatsApp<span class="visually-hidden"> (abre o WhatsApp)</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero on-dark" id="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="badge"><svg aria-hidden="true"><use href="#i-star"/></svg>Seminovos · Abolição – RJ</span>
+          <h1 id="hero-title">Mais de 18 anos <span class="hl">realizando sonhos.</span></h1>
+          <p class="hero__sub">Compra, venda, troca e financiamento de seminovos. Seu usado entra na troca e a documentação é conferida. Escolha seu carro e fale com a gente agora.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary" data-wa="hero" href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener noreferrer">
+              <span class="wa-icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
+              Chamar no WhatsApp<span class="visually-hidden"> (abre o WhatsApp)</span>
+            </a>
+            <a class="btn btn--secondary" href="#estoque">Ver carros disponíveis</a>
+          </div>
+        </div>
+
+        <!-- Card de atalhos: serviços da loja -->
+        <div class="quick">
+          <h2 id="quick-title">O que você precisa?</h2>
+          <p>Compra, venda, troca e financiamento em um só lugar.</p>
+          <ul class="quick__grid" role="list" aria-labelledby="quick-title">
+            <li>
+              <a class="quick__item" href="#estoque">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17H3v-5l2-5h12l3 5h1v5h-2"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/><path d="M9.5 17h5M5 12h15"/></svg>
+                <strong>Comprar</strong>
+                <span>Seminovos prontos para rodar</span>
+              </a>
+            </li>
+            <li>
+              <a class="quick__item" data-wa="vender" href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <strong>Vender</strong>
+                <span>Compramos seu carro<span class="visually-hidden"> (abre o WhatsApp)</span></span>
+              </a>
+            </li>
+            <li>
+              <a class="quick__item" href="#troca">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                <strong>Trocar</strong>
+                <span>Seu usado como entrada</span>
+              </a>
+            </li>
+            <li>
+              <a class="quick__item" data-wa="financiar" href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+                <strong>Financiar</strong>
+                <!-- [INFORMAÇÃO NECESSÁRIA] condições de financiamento -->
+                <span>Consulte as condições<span class="visually-hidden"> (abre o WhatsApp)</span></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ESTOQUE ===================== -->
+    <section class="section" id="estoque" aria-labelledby="estoque-title">
+      <div class="container">
+        <div class="section__head stock__head">
+          <div>
+            <h2 id="estoque-title">Carros à venda</h2>
+            <p>Alguns carros que estão na loja agora</p>
+          </div>
+          <p class="stock__count" id="contagem"></p>
+        </div>
+        <!-- Cards gerados pelo array "carros" no script ao final da página -->
+        <ul class="stock__grid" id="lista-carros" role="list"></ul>
+        <noscript><p>Veja nosso estoque no <a href="https://www.instagram.com/feiraorevenda/" target="_blank" rel="noopener noreferrer">Instagram @feiraorevenda</a>.</p></noscript>
+        <p class="stock__note">*Preços estimados, com base nos anúncios publicados. Valores sujeitos a alteração. Confirme preço e disponibilidade pelo WhatsApp.</p>
+        <div class="stock__more">
+          <p>Estoque atualizado diariamente no nosso Instagram.</p>
+          <a class="btn btn--secondary" id="link-instagram" href="https://www.instagram.com/feiraorevenda/" target="_blank" rel="noopener noreferrer">Ver mais no Instagram<span class="visually-hidden"> (abre em nova aba)</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TROCA ===================== -->
+    <section class="section section--white" id="troca" aria-labelledby="troca-title">
+      <div class="container trade">
+        <div>
+          <h2 id="troca-title">Seu usado vale como entrada</h2>
+          <p>Mande fotos e dados do seu carro pelo WhatsApp e receba uma proposta de troca.</p>
+        </div>
+        <div>
+          <ol class="trade__steps" role="list">
+            <li>Mande fotos e dados do seu carro</li>
+            <li>Receba uma proposta de troca</li>
+            <li>Escolha seu próximo carro</li>
+          </ol>
+          <a class="btn btn--primary btn--block" data-wa="troca" href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener noreferrer">
+            <span class="wa-icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
+            Avaliar meu usado<span class="visually-hidden"> (abre o WhatsApp)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DIFERENCIAIS ===================== -->
+    <section class="section" id="sobre" aria-labelledby="sobre-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="sobre-title">Por que a Feirão Revenda</h2>
+        </div>
+        <ul class="why__list" role="list">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Mais de 18 anos no mercado</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Documentação ok em todos os anúncios</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Aceitamos seu usado na troca</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Financiamento</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Atendimento direto pelo WhatsApp</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== SONHOS REALIZADOS ===================== -->
+    <section class="section section--brand dreams on-dark" aria-labelledby="sonhos-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="sonhos-title">Mais um sonho <span class="realizado">REALIZADO</span></h2>
+          <p>Cada entrega aqui é comemorada. Veja quem já saiu de carro novo.</p>
+        </div>
+        <div class="carousel">
+          <!-- Cards gerados pelo array "entregas" no script. [INFORMAÇÃO NECESSÁRIA] fotos + autorização dos clientes -->
+          <ul class="carousel__track" id="lista-entregas" role="list" tabindex="0" aria-label="Fotos de entregas a clientes (role para o lado)"></ul>
+          <div class="carousel__nav">
+            <button class="carousel__btn" type="button" data-carousel="lista-entregas" data-dir="-1" aria-label="Foto anterior"><svg aria-hidden="true"><use href="#i-prev"/></svg></button>
+            <button class="carousel__btn" type="button" data-carousel="lista-entregas" data-dir="1" aria-label="Próxima foto"><svg aria-hidden="true"><use href="#i-next"/></svg></button>
+          </div>
+        </div>
+        <div class="dreams__cta">
+          <a class="btn btn--primary" data-wa="galeria" href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener noreferrer">
+            <span class="wa-icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
+            O próximo pode ser você<span class="visually-hidden"> (abre o WhatsApp)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== VISITE A LOJA ===================== -->
+    <section class="section section--white" id="contato" aria-labelledby="contato-title">
+      <div class="container visit">
+        <div class="visit__info">
+          <h2 id="contato-title">Visite a loja</h2>
+          <dl>
+            <div>
+              <dt>Endereço</dt>
+              <dd data-endereco><span class="placeholder">[ENDERECO]</span></dd>
+            </div>
+            <div>
+              <dt>Horário</dt>
+              <dd data-horario><span class="placeholder">[HORARIO]</span></dd>
+            </div>
+          </dl>
+          <div class="visit__ctas">
+            <a class="btn btn--secondary" id="link-mapa" href="https://www.google.com/maps/search/?api=1&amp;query=%5BENDERECO%5D" target="_blank" rel="noopener noreferrer">Como chegar<span class="visually-hidden"> (abre o Google Maps)</span></a>
+            <a class="btn btn--primary" data-wa="contato" href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener noreferrer">
+              <span class="wa-icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
+              Chamar no WhatsApp<span class="visually-hidden"> (abre o WhatsApp)</span>
+            </a>
+          </div>
+        </div>
+        <!-- Mapa: o iframe só é criado quando a seção aparece na tela e o endereço estiver preenchido -->
+        <div class="map" id="mapa">[MAPA]</div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA FINAL ===================== -->
+    <section class="section final" aria-labelledby="final-title">
+      <div class="container">
+        <h2 id="final-title">Seu próximo carro está a uma mensagem de distância.</h2>
+        <a class="btn btn--dark" data-wa="final" href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener noreferrer">
+          <span class="wa-icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
+          Chamar no WhatsApp<span class="visually-hidden"> (abre o WhatsApp)</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <span class="footer__logo"><img src="img/logo.png" alt="Feirão Revenda" width="120" height="48" loading="lazy" decoding="async"></span>
+          <p>Compra · Venda · Troca · Financiamento</p>
+        </div>
+        <div>
+          <h2>Loja</h2>
+          <ul role="list">
+            <li data-endereco><span class="placeholder">[ENDERECO]</span></li>
+            <li>Horário: <span data-horario><span class="placeholder">[HORARIO]</span></span></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contato</h2>
+          <ul role="list">
+            <li><a data-wa="footer" href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener noreferrer">WhatsApp:&nbsp;<span data-wa-numero><span class="placeholder">[WHATSAPP_NUMBER]</span></span></a></li>
+            <li><a href="https://www.instagram.com/feiraorevenda/" target="_blank" rel="noopener noreferrer">Instagram @feiraorevenda</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <!-- [INFORMAÇÃO NECESSÁRIA] CNPJ -->
+        <p>CNPJ: <span class="placeholder">[CNPJ]</span></p>
+        <p>© <span id="ano">2026</span> Feirão Revenda. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FIXOS ===================== -->
+  <div class="sticky-bar" id="sticky-bar">
+    <a class="btn btn--primary btn--block" data-wa="barra" href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener noreferrer" tabindex="-1">
+      <span class="wa-icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
+      Chamar no WhatsApp<span class="visually-hidden"> (abre o WhatsApp)</span>
+    </a>
+  </div>
+  <a class="wa-float" id="wa-float" data-wa="barra" href="https://wa.me/[WHATSAPP_NUMBER]" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp (abre o WhatsApp)" tabindex="-1">
+    <span class="wa-icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
+  </a>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /* =========================================================
+       CONFIGURAÇÃO — edite aqui
+       ========================================================= */
+    var WHATSAPP = '[WHATSAPP_NUMBER]'; // [INFORMAÇÃO NECESSÁRIA] 55 + DDD + número, só dígitos (ex.: 5521900000000)
+    var ENDERECO = '[ENDERECO]'; // [INFORMAÇÃO NECESSÁRIA] endereço completo com complemento, cidade e CEP
+    var HORARIO = '[HORARIO]'; // [INFORMAÇÃO NECESSÁRIA] ex.: 'Seg. a sex. 9h–18h · Sáb. 9h–14h'
+    var INSTAGRAM = 'https://www.instagram.com/feiraorevenda/';
+    var LOCAL = 'Abolição – RJ'; // localização exibida nos cards
+
+    // Estoque: os cards são gerados a partir daqui.
+    // preco: preço ESTIMADO (número), tirado dos anúncios do Instagram. Confirmar com a loja.
+    var carros = [
+      { marca: 'Honda', modelo: 'City Sedan', versao: 'EXL 1.5', ano: '2024', comb: 'Flex', cambio: 'Automático', preco: 84999.99, foto: 'img/city.webp' },
+      { marca: 'Citroën', modelo: 'C3', versao: 'Tendance 1.5', ano: '2013', comb: 'Flex', cambio: '', preco: 32999.99, foto: 'img/c3.webp' },
+      { marca: 'Chevrolet', modelo: 'Spin', versao: 'LT 1.8', ano: '2015', comb: 'GNV', cambio: '', preco: 35999.99, foto: 'img/spin.webp' },
+      { marca: 'Renault', modelo: 'Logan', versao: 'Expression 1.6', ano: '2015', comb: 'GNV', cambio: '', preco: 29999.99, foto: 'img/logan.webp' },
+      { marca: 'Toyota', modelo: 'Etios Sedan', versao: 'XLS 1.5', ano: '2015', comb: 'GNV', cambio: '', preco: 29999.99, foto: 'img/etios.webp' },
+      { marca: 'Chevrolet', modelo: 'Cobalt', versao: 'LT 1.4', ano: '2020', comb: 'GNV', cambio: '', preco: 43999.99, foto: 'img/cobalt.webp' }
+    ];
+
+    // Entregas: [INFORMAÇÃO NECESSÁRIA] fotos reais + @ do cliente (com autorização)
+    var entregas = [
+      { foto: 'img/entrega-1.webp', cliente: '[@CLIENTE_01]' },
+      { foto: 'img/entrega-2.webp', cliente: '[@CLIENTE_02]' },
+      { foto: 'img/entrega-3.webp', cliente: '[@CLIENTE_03]' },
+      { foto: 'img/entrega-4.webp', cliente: '[@CLIENTE_04]' }
+    ];
+
+    var MENSAGENS = {
+      padrao: 'Olá! Vim pelo site da Feirão Revenda e quero falar sobre um carro.',
+      vender: 'Olá! Quero vender meu carro. Meu carro é: ',
+      financiar: 'Olá! Quero saber as condições de financiamento.',
+      troca: 'Olá! Quero dar meu carro na troca. Meu carro é: ',
+      galeria: 'Olá! Vi as entregas no site e quero realizar o meu sonho também.'
+    };
+
+    /* =========================================================
+       Utilidades
+       ========================================================= */
+    var brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+    function isPlaceholder(v) { return !v || /\[|X/.test(v); }
+
+    function waLink(msg) {
+      return 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg || MENSAGENS.padrao);
+    }
+
+    function track(origem) {
+      if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+        window.dataLayer.push({ event: 'whatsapp_click', origem: origem });
+      }
+    }
+
+    function el(tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text != null) n.textContent = text;
+      return n;
+    }
+
+    function svgUse(id) {
+      var ns = 'http://www.w3.org/2000/svg';
+      var s = document.createElementNS(ns, 'svg');
+      s.setAttribute('aria-hidden', 'true');
+      var u = document.createElementNS(ns, 'use');
+      u.setAttribute('href', '#' + id);
+      s.appendChild(u);
+      return s;
+    }
+
+    function waButton(label, origem, msg, extraCls) {
+      var a = el('a', 'btn btn--primary' + (extraCls ? ' ' + extraCls : ''));
+      a.href = waLink(msg);
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.setAttribute('data-wa', origem);
+      a.setAttribute('data-msg', msg);
+      var ic = el('span', 'wa-icon');
+      ic.appendChild(svgUse('i-wa'));
+      a.appendChild(ic);
+      a.appendChild(document.createTextNode(label));
+      return a;
+    }
+
+    // Foto com fallback: se o arquivo não existir, mostra bloco com o nome do campo
+    function media(src, alt, ratioCls, w, h, fallback, eager) {
+      var box = el('div', 'media ' + ratioCls);
+      var img = el('img');
+      img.src = src; img.alt = alt; img.width = w; img.height = h;
+      if (!eager) img.loading = 'lazy';
+      img.decoding = 'async';
+      img.addEventListener('error', function () { box.classList.add('is-missing'); });
+      box.appendChild(img);
+      box.appendChild(el('span', 'media__fallback', fallback));
+      return box;
+    }
+
+    function spec(icon, text) {
+      var li = el('li');
+      li.appendChild(svgUse(icon));
+      li.appendChild(document.createTextNode(text));
+      return li;
+    }
+
+    /* =========================================================
+       Estoque (cards estilo marketplace)
+       ========================================================= */
+    (function renderCarros() {
+      var list = document.getElementById('lista-carros');
+      if (!list) return;
+      carros.forEach(function (c, i) {
+        var nome = c.marca + ' ' + c.modelo;
+        var temPreco = typeof c.preco === 'number';
+        var preco = temPreco ? brl.format(c.preco) : '[PRECO]';
+        var li = el('li');
+        var card = el('article', 'car-card');
+
+        var m = media(c.foto, nome + ' ' + c.versao + ' ' + c.ano, 'media--4x3', 800, 600, '[IMAGEM_CARRO_0' + (i + 1) + ']', i < 3);
+        m.appendChild(el('span', 'car-card__chip', 'VENDE-SE'));
+        card.appendChild(m);
+
+        var body = el('div', 'car-card__body');
+        body.appendChild(el('h3', 'car-card__title', nome));
+        body.appendChild(el('p', 'car-card__version', c.versao + (c.cambio ? ' ' + c.cambio : '')));
+
+        var price = el('p', 'car-card__price');
+        price.appendChild(el('small', null, 'Preço estimado*'));
+        price.appendChild(el('strong', null, preco));
+        body.appendChild(price);
+
+        var specs = el('ul', 'car-card__specs');
+        specs.setAttribute('role', 'list');
+        specs.appendChild(spec('i-cal', c.ano));
+        specs.appendChild(spec('i-fuel', c.comb));
+        if (c.cambio) specs.appendChild(spec('i-gear', c.cambio));
+        specs.appendChild(spec('i-pin', LOCAL));
+        body.appendChild(specs);
+
+        var checks = el('ul', 'checks');
+        checks.setAttribute('role', 'list');
+        ['Documentação ok', 'Aceita seu usado na troca'].forEach(function (t) {
+          var item = el('li');
+          item.appendChild(svgUse('i-check'));
+          item.appendChild(document.createTextNode(t));
+          checks.appendChild(item);
+        });
+        body.appendChild(checks);
+
+        var msg = 'Olá! Vi no site o ' + nome + ' ' + c.versao + ' ' + c.ano +
+          (temPreco ? ' com preço estimado de ' + preco : '') + '. Ainda está disponível?';
+        var cta = el('div', 'car-card__cta');
+        var btn = waButton('Tenho interesse', 'card', msg, 'btn--block');
+        btn.setAttribute('aria-label', 'Tenho interesse no ' + nome + ' ' + c.ano + ' (abre o WhatsApp)');
+        cta.appendChild(btn);
+        body.appendChild(cta);
+
+        card.appendChild(body);
+        li.appendChild(card);
+        list.appendChild(li);
+      });
+      var count = document.getElementById('contagem');
+      if (count) count.textContent = carros.length + (carros.length === 1 ? ' carro disponível' : ' carros disponíveis');
+    })();
+
+    /* =========================================================
+       Entregas
+       ========================================================= */
+    (function renderEntregas() {
+      var list = document.getElementById('lista-entregas');
+      if (!list) return;
+      entregas.forEach(function (e, i) {
+        var li = el('li');
+        var fig = el('figure', 'delivery');
+        fig.appendChild(media(e.foto, 'Entrega de carro ao cliente ' + e.cliente, 'media--4x5', 800, 1000, '[IMAGEM_ENTREGA_0' + (i + 1) + ']'));
+        var cap = el('figcaption');
+        cap.appendChild(document.createTextNode('Nosso cliente '));
+        cap.appendChild(el('strong', null, e.cliente));
+        fig.appendChild(cap);
+        li.appendChild(fig);
+        list.appendChild(li);
+      });
+    })();
+
+    /* =========================================================
+       Links de WhatsApp estáticos + dados de contato
+       ========================================================= */
+    document.querySelectorAll('a[data-wa]').forEach(function (a) {
+      if (a.hasAttribute('data-msg')) return;
+      var origem = a.getAttribute('data-wa');
+      var msg = MENSAGENS[origem] || MENSAGENS.padrao;
+      a.setAttribute('data-msg', msg);
+      a.href = waLink(msg);
+    });
+
+    document.addEventListener('click', function (ev) {
+      var a = ev.target.closest && ev.target.closest('a[data-wa]');
+      if (a) track(a.getAttribute('data-wa'));
+    });
+
+    if (!isPlaceholder(ENDERECO)) {
+      document.querySelectorAll('[data-endereco]').forEach(function (n) { n.textContent = ENDERECO; });
+      var mapa = document.getElementById('link-mapa');
+      if (mapa) mapa.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(ENDERECO);
+    }
+    if (!isPlaceholder(HORARIO)) {
+      document.querySelectorAll('[data-horario]').forEach(function (n) { n.textContent = HORARIO; });
+    }
+    if (!isPlaceholder(WHATSAPP)) {
+      var d = WHATSAPP.replace(/^55/, '');
+      var fmt = '(' + d.slice(0, 2) + ') ' + d.slice(2, d.length - 4) + '-' + d.slice(-4);
+      document.querySelectorAll('[data-wa-numero]').forEach(function (n) { n.textContent = fmt; });
+    }
+    var insta = document.getElementById('link-instagram');
+    if (insta) insta.href = INSTAGRAM;
+
+    var ano = document.getElementById('ano');
+    if (ano) ano.textContent = new Date().getFullYear();
+
+    /* =========================================================
+       Header com sombra ao rolar
+       ========================================================= */
+    (function () {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    /* =========================================================
+       Barra fixa (mobile) / botão flutuante (desktop):
+       aparece quando o hero sai da tela
+       ========================================================= */
+    (function () {
+      var hero = document.getElementById('hero');
+      var fixed = document.querySelectorAll('#sticky-bar a, #wa-float');
+      function set(show) {
+        document.body.classList.toggle('show-fixed', show);
+        fixed.forEach(function (a) { a.tabIndex = show ? 0 : -1; });
+      }
+      if (!hero || !('IntersectionObserver' in window)) { set(true); return; }
+      new IntersectionObserver(function (entries) { set(!entries[0].isIntersecting); }, { threshold: 0 }).observe(hero);
+    })();
+
+    /* =========================================================
+       Carrossel: botões anterior/próximo
+       ========================================================= */
+    document.querySelectorAll('[data-carousel]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var track = document.getElementById(btn.getAttribute('data-carousel'));
+        if (!track || !track.firstElementChild) return;
+        var step = track.firstElementChild.getBoundingClientRect().width + 16;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        track.scrollBy({ left: step * Number(btn.getAttribute('data-dir')), behavior: reduce ? 'auto' : 'smooth' });
+      });
+    });
+
+    /* =========================================================
+       Mapa sob demanda
+       ========================================================= */
+    (function () {
+      var box = document.getElementById('mapa');
+      if (!box || isPlaceholder(ENDERECO)) return;
+      box.textContent = 'Carregando mapa…';
+      function load() {
+        var f = document.createElement('iframe');
+        f.title = 'Mapa: ' + ENDERECO;
+        f.loading = 'lazy';
+        f.referrerPolicy = 'no-referrer-when-downgrade';
+        f.src = 'https://www.google.com/maps?q=' + encodeURIComponent(ENDERECO) + '&output=embed';
+        box.textContent = '';
+        box.appendChild(f);
+      }
+      if (!('IntersectionObserver' in window)) { load(); return; }
+      var io = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) { io.disconnect(); load(); }
+      }, { rootMargin: '200px' });
+      io.observe(box);
+    })();
+  })();
+  </script>
+</body>
+</html>
