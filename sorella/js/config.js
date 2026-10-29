@@ -55,6 +55,7 @@ window.SORELLA_CONFIG = {
   parcelamento: '',                  // ex.: 'em até 3x sem juros' — vazio = não exibe
 
   // PRODUTOS. demo: true = produto de demonstração (mostra o selo "Demonstração").
+  // p02, p03, p04 e p06 usam imagens de apresentação (não são peças da loja).
   // preco / precoAnterior: número (ex.: 189.9) ou '[PRECO]'.
   // nota: texto curto exibido abaixo do preço (ex.: condição da campanha).
   // categorias: ids dos filtros acima. esgotado: true mostra "Indisponível".
@@ -74,24 +75,29 @@ window.SORELLA_CONFIG = {
       tamanhos: '[TAMANHOS]', link: '', esgotado: false
     },
     {
-      id: 'p02', demo: true, nome: 'Vestido Longo Preto', foto: './assets/images/produto-02.webp',
-      alt: 'Modelo usando vestido longo preto', preco: '[PRECO]', precoAnterior: null,
+      id: 'p02', demo: true, nome: 'Vestido Longo Bordado Dourado', foto: './assets/images/produto-02.webp',
+      alt: 'Vestido longo dourado com bordado em manequim', preco: '[PRECO]', precoAnterior: null,
       categorias: ['vestidos', 'novidades'],
-      cores: [{ nome: 'Preto', hex: '#1E1E1E' }],
+      cores: [{ nome: 'Dourado', hex: '#C9A66B' }],
       tamanhos: '[TAMANHOS]', link: '', esgotado: false
     },
     {
       id: 'p03', demo: true, nome: 'Vestido Longo Estampa Botânica', foto: './assets/images/produto-03.webp',
-      alt: 'Modelo usando vestido longo com estampa botânica', preco: '[PRECO]', precoAnterior: null,
+      alt: 'Modelo usando vestido longo verde com estampa floral', preco: '[PRECO]', precoAnterior: null,
       categorias: ['vestidos', 'novidades', 'tons-naturais'],
-      cores: [{ nome: 'Estampa botânica', hex: '#5E6B4A' }],
+      cores: [{ nome: 'Verde floral', hex: '#7A9A4E' }],
       tamanhos: '[TAMANHOS]', link: '', esgotado: false
     },
     {
-      id: 'p04', demo: true, nome: 'Conjunto Estampa Botânica', foto: './assets/images/produto-04.webp',
-      alt: 'Modelo usando conjunto com estampa botânica', preco: '[PRECO]', precoAnterior: null,
-      categorias: ['conjuntos', 'tons-naturais'],
-      cores: [{ nome: 'Estampa botânica', hex: '#5E6B4A' }],
+      id: 'p04', demo: true, nome: 'Vestido de Linho Tons Naturais', foto: './assets/images/produto-04.webp',
+      alt: 'Arara com vestidos de linho em off-white, bege, verde-oliva e terracota', preco: '[PRECO]', precoAnterior: null,
+      categorias: ['vestidos', 'tons-naturais'],
+      cores: [
+        { nome: 'Off-white', hex: '#EFE6D6' },
+        { nome: 'Bege', hex: '#CDB89A' },
+        { nome: 'Verde-oliva', hex: '#7E7C55' },
+        { nome: 'Terracota', hex: '#B5583A' }
+      ],
       tamanhos: '[TAMANHOS]', link: '', esgotado: false
     },
     {
@@ -103,10 +109,10 @@ window.SORELLA_CONFIG = {
       tamanhos: '[TAMANHOS]', link: '', esgotado: false
     },
     {
-      id: 'p06', demo: true, nome: 'Conjunto Preto', foto: './assets/images/produto-06.webp',
-      alt: 'Modelo usando conjunto preto', preco: '[PRECO]', precoAnterior: null,
+      id: 'p06', demo: true, nome: 'Conjunto Bordado Verde', foto: './assets/images/produto-06.webp',
+      alt: 'Conjunto verde com bordado dourado em manequim', preco: '[PRECO]', precoAnterior: null,
       categorias: ['conjuntos', 'mais-vendidos'],
-      cores: [{ nome: 'Preto', hex: '#1E1E1E' }],
+      cores: [{ nome: 'Verde-esmeralda', hex: '#145A4A' }],
       tamanhos: '[TAMANHOS]', link: '', esgotado: false
     }
   ],
