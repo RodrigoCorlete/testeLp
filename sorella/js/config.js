@@ -21,7 +21,7 @@ window.SORELLA_CONFIG = {
   },
 
   // Barra fina do topo. Só benefícios CONFIRMADOS. Lista vazia = barra oculta.
-  beneficios: ['[BENEFICIO_01]', '[BENEFICIO_02]', '[BENEFICIO_03]'],
+  beneficios: [],
 
   // Categorias: aparecem no menu, nos filtros e nos cards de destaque.
   // "filtro" aplica o filtro na vitrine; "ancora" leva a uma seção da página.

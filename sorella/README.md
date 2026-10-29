@@ -118,7 +118,7 @@ Os comportamentos derivam desses dados:
 | Logo | `loja.logo` | Arquivo do logotipo em SVG ou PNG com fundo transparente. Hoje aparece o nome em *Sacramento* |
 | `[EMAIL]`, `[ENDERECO]`, `[CNPJ]` | `loja` | Dados institucionais (use `''` no endereço se a loja for só online) |
 | `[HORARIO_ATENDIMENTO]` | `loja` e `atendimento` | Horário de atendimento |
-| `[BENEFICIO_01..03]` | `beneficios` | Só benefícios confirmados (ex.: entrega para todo o Brasil) |
+| Barra de benefícios (desativada) | `beneficios` | Para reativar, preencha com benefícios confirmados (ex.: `['Entregamos para todo o Brasil']`) |
 | Produtos de demonstração (`demo: true`) | `produtos` p02, p03, p04, p06 | Nomes, fotos, preços, cores, tamanhos e estoque reais |
 | Nome do vestido verde | `produtos` p05 | Confirmar o nome oficial e o preço |
 | `[PRECO]` | `produtos[].preco` | Preço de cada produto (número, ex.: `189.9`) |
