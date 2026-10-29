@@ -35,7 +35,7 @@ Landing page de moda feminina para a **Sorella** ([@sorella.sorella](https://www
   - **Atendimento:** acordeão com card de contato.
 - **Honestidade das funções:**
   - Não há carrinho nem checkout fingidos. A "Minha seleção" guarda as peças no navegador e envia a lista pelo WhatsApp.
-  - Enquanto o número não estiver configurado, os botões de WhatsApp aparecem **desativados**, com o aviso "WhatsApp em configuração".
+  - Se o número do WhatsApp for removido do `config.js`, os botões aparecem **desativados**, com o aviso "WhatsApp em configuração".
   - Não há conta de cliente nem cálculo de frete.
   - O feed do Instagram não é simulado: as imagens são cadastradas manualmente.
 - **Referências:** a afroditestore40 (estrutura comercial), a bluv/the-finds (limpeza visual, mobile-first, looks) e a usevitbrand/quem-somos (narrativa) foram usadas como orientação de estrutura, sem copiar layout, textos ou marca. Neste ambiente, o acesso a esses sites e ao Instagram estava bloqueado.
@@ -116,7 +116,6 @@ Os comportamentos derivam desses dados:
 |---|---|---|
 | Nome oficial | `loja.nome` | Confirmar se é "Sorella" |
 | Logo | `loja.logo` | Arquivo do logotipo em SVG ou PNG com fundo transparente. Hoje aparece o nome em *Sacramento* |
-| `[WHATSAPP_NUMBER]` | `loja.whatsapp` | 55 + DDD + número, só dígitos. Libera todos os botões de WhatsApp |
 | `[EMAIL]`, `[ENDERECO]`, `[CNPJ]` | `loja` | Dados institucionais (use `''` no endereço se a loja for só online) |
 | `[HORARIO_ATENDIMENTO]` | `loja` e `atendimento` | Horário de atendimento |
 | `[BENEFICIO_01..03]` | `beneficios` | Só benefícios confirmados (ex.: entrega para todo o Brasil) |
@@ -147,4 +146,4 @@ Testes feitos no Chromium (Playwright) em 320, 375, 768 e 1440px:
 - **Minha seleção:** adiciona item com a cor escolhida, conta, persiste ao recarregar, remove e limpa.
 - **Campanha:** aplica o filtro "Tons da natureza" (4 produtos).
 - **Políticas no rodapé:** abrem o item correspondente na seção de atendimento.
-- **WhatsApp:** botões desativados com aviso enquanto o número não existe.
+- **WhatsApp:** número (21) 96991-0844 configurado; todos os botões abrem `wa.me/5521969910844` com mensagem pronta.

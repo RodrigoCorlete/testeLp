@@ -13,7 +13,7 @@ window.SORELLA_CONFIG = {
     logo: '',                        // ex.: './assets/images/logo.svg' — vazio = nome em texto
     instagram: 'https://www.instagram.com/sorella.sorella/',
     instagramUsuario: '@sorella.sorella',
-    whatsapp: '[WHATSAPP_NUMBER]',   // 55 + DDD + número, só dígitos
+    whatsapp: '5521969910844',       // 55 + DDD + número, só dígitos
     email: '[EMAIL]',
     endereco: '[ENDERECO]',          // deixe '' se a loja for só online
     cnpj: '[CNPJ]',
